@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def restAssuredVersion = "5.5.5",
+    junitVersion = "5.10.0"
+
+dependencies {
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+    )
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')
+}
+
+test {
+    useJUnitPlatform()
+}
